@@ -102,4 +102,14 @@ router.post('/login',
 
 /* end login verifaction */
 
+
+// logout
+router.get('/logout', function (req, res) {
+    req.logout();
+
+    req.flash('success_msg', 'You are loggout out');
+
+    res.redirect('/users/login');
+});
+
 module.exports = router;
